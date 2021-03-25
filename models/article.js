@@ -9,7 +9,7 @@ const articleSchema = new Schema({
     },
     snippet: {
         type: String,
-        required: true,
+        required: false,
     },
     body: {
         type: String, 

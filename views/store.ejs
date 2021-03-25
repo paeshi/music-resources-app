@@ -1,0 +1,7 @@
+<%posts.forEach(function(post) { %>
+    <h2> <%=post.title %></h2>
+    <p><%= post.content%></p>
+<% });%>
+
+
+<a href="" class="delete" data-doc="<%=article._id %>">Delete</a>

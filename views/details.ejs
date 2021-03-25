@@ -1,0 +1,26 @@
+<%- include('partials/header');-%>
+
+<div class="details content">
+    <h2> <%=article.title %></h2>
+
+<div class="content">
+<p><%= article.body%></p>
+</div>
+<a href="" class="delete" data-doc="<%=article._id %>">Delete</a>
+</div>
+
+
+<script>
+    const trashcan = document.querySelector('a.delete');
+    trashcan.addEventListener('click', (e) => {
+        const endpoint = `/articles/${trashcan.dataset.doc}`;
+        fetch(endpoint, {
+            method: 'DELETE'
+        })
+        .then((response) => response.json())
+        .then((data) => window.location.href = data.redirect)
+        .catch(err => console.log(err));
+    })
+</script>
+
+<%- include('partials/footer');-%>  
