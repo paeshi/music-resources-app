@@ -1,10 +1,8 @@
 
-// const _= require('lodash');
 const Article = require('../models/article');
 
 
-
-const index = function (req, res) {
+const index = function(req, res) {
     Article.find().sort({ createdAt: -1 })
     .then((result) => {
     res.render('articles', {title: 'All Articles', articles: result});
@@ -31,6 +29,8 @@ const article = new Article(req.body);
     });
 };
 
+
+
 const details = (req, res) => {
     Article.findById(req.params.id)
     .then((result) => {
@@ -40,6 +40,7 @@ const details = (req, res) => {
         console.log(err);  
     });
 };
+
 
 const delete_post = (req, res) => {
     const id = req.params.id;
@@ -52,17 +53,25 @@ const delete_post = (req, res) => {
     });
 };
 
+// const update = (req, res) => {
+//     Article.findByIdAndUpdate(req.params.id, function(err, article) {
+//         res.render('edit');
+//     })
+// }
 
-const update = (req, res) => {
-    Article.findByIdAndUpdate(req.params.id, (err, doc) => {
-        if(!err)
-        res.render('articles/create', {
-            title: "Update", 
-            content: doc
-        })
-    });
+
+
+// const update = (req, res) => {
+//     Article.findByIdAndUpdate(req.params.id, (err, doc) => {
+//         if(!err)
+//         res.render('articles/create', {
+//             title: "Update", 
+//             content: doc
+//         })
+//     });
     
-}
+// }
+
 
 
 module.exports = {
@@ -71,10 +80,7 @@ module.exports = {
     create_get,
     create_post,
     delete_post,
-    update,
-
-
-
+    // update,
 
 
 }

@@ -1,8 +1,8 @@
-<%- include('partials/header');-%>
+<!-- <%- include('partials/header');-%>
 
- <h1>Articles</h1>
+ <h1>Edit</h1>
 
-    <form action="/articles" method="post" id="articles">
+    <form action="/articles/<%= article._id%>?_method=PUT" method="post" id="articles">
         <div class="form-group">
             <label class="form-label">Title</label>
             <input type="text" name="title" placeholder="" class="form-control">
@@ -16,4 +16,4 @@
     </form>
 
 
-<%- include('partials/footer');-%>
+<%- include('partials/footer');-%> -->

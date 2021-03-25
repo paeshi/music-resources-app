@@ -11,15 +11,13 @@ const articlesCtrl = require('../controllers/articles')
 // router.get('/articles/:articleName', articlesCtrl.go);
 
 
-
-
 router.get('/articles', articlesCtrl.index);
 
 router.get('/articles/create', articlesCtrl.create_get);
 router.post('/articles', articlesCtrl.create_post);
 router.get('/articles/:id', articlesCtrl.details);
 router.delete('/articles/:id', articlesCtrl.delete_post);
-router.get('/articles/:id', articlesCtrl.update);
+// router.put('/articles/:id', articlesCtrl.update);
 
    
 
@@ -49,13 +47,6 @@ router.get('/articles/:id', articlesCtrl.update);
 //     })
 // })
 
-    
 
-
-
-
-
-
-    
 
 module.exports = router;

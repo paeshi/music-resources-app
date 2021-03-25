@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const methodOverride = require('method-override');
 const _ = require('lodash');
 const port = process.env.PORT || 3050;
 require('./config/database');
@@ -22,7 +23,9 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true}));
 app.use(express.static('public'));
 
-
+// app.get('/edit', function (req, res) {
+//     res.send('hi');
+// })
 // app.use('/', indexRouter);
 app.use('/', articlesRouter);
 app.use('/', toolsRouter);
