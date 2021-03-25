@@ -8,7 +8,12 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quos tempore reiciendis, consectetur odio ut quisquam id earum fuga inventore magnam, facilis explicabo autem corrupti.</p>
             </div>
             <div class="col-lg-6 welcome-div">
-               
+               <%if (articles.length > 0) { %>
+               <% articles.forEach(function(article) { %>
+                <h3 class='title'><%=article.title%></h3>
+                <p class='snippet'><%=article.snippet%></p>
+                <%}) %>
+              <% } %>
             </div>
         </div>
     </section>

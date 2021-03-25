@@ -100,3 +100,10 @@ h3 {
 #articles {
     margin: 5em;
 }
+
+
+.footer {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}

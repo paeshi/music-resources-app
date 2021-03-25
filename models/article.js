@@ -2,9 +2,17 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const articleSchema = new Schema({
-    content: String,
+    
     title: {
         type: String,
+        required: true,
+    },
+    snippet: {
+        type: String,
+        required: true,
+    },
+    body: {
+        type: String, 
         required: true,
     },
     date: {
@@ -13,13 +21,25 @@ const articleSchema = new Schema({
             return new Date().getFullYear();
           }
     },
-    subject: {
-        type: {
-            subject: String,
-            tags: String,
-        }
-            
-    }, 
-});
+    
+}, { timestamps: true});
 
-module.exports = mongoose.model('Article', articleSchema);
+const Article = mongoose.model('Article', articleSchema)
+
+module.exports = Article;
+
+// 
+
+
+ 
+
+
+
+
+// module.exports = {
+//     // index,
+//     show,
+//     create,
+//     go,
+//     // new: newArticle,
+// };
