@@ -1,6 +1,7 @@
-// const express = require('express');
-// const router = express.Router();
-// const articlesCtrl = require('../controllers/articles')
+const express = require('express');
+const router = express.Router();
+const Article = require('../models/article');
+const articlesCtrl = require('../controllers/articles')
 
 // router.get('/articles', articlesCtrl.show);
 // // router.get('/new', articlesCtrl.new);
@@ -8,4 +9,53 @@
 // router.post('/articles', articlesCtrl.create)
 
 // router.get('/articles/:articleName', articlesCtrl.go);
-// module.exports = router;
+
+
+
+
+router.get('/articles', articlesCtrl.index);
+
+router.get('/articles/create', articlesCtrl.create_get);
+router.post('/articles', articlesCtrl.create_post);
+router.get('/articles/:id', articlesCtrl.details);
+router.delete('/articles/:id', articlesCtrl.delete_post);
+router.get('/articles/:id', articlesCtrl.update);
+
+   
+
+// router.get('/single-articles', (req, res) => {
+//     Article.findById('605c32221be38770857367fc')
+//     .then((result) => {
+//     res.send(result);
+// })
+// .catch((err) => {
+//     console.log(err);  
+// });
+// })
+
+
+// router.get('/add-article', function(req, res) {
+//     const articles = new Article({
+//         title: 'Chords',
+//         snippet: 'About chords',
+//         body: 'This is chord theory'
+//     });
+//     articles.save()
+//     .then((result) => {
+//         res.send(result)
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     })
+// })
+
+    
+
+
+
+
+
+
+    
+
+module.exports = router;

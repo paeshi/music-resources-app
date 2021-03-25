@@ -1,5 +1,97 @@
 
 // const _= require('lodash');
+const Article = require('../models/article');
+
+
+
+const index = function (req, res) {
+    Article.find().sort({ createdAt: -1 })
+    .then((result) => {
+    res.render('articles', {title: 'All Articles', articles: result});
+})
+.catch((err) => {
+    console.log(err);  
+});
+};
+
+
+
+const create_get = (req, res) => {
+    res.render('create', {title: 'Create Article'});
+};
+
+const create_post = (req, res) => {
+const article = new Article(req.body);
+    article.save()
+    .then((result) => {
+        res.redirect('/articles');
+    })
+    .catch((err) => {
+        console.log(err);  
+    });
+};
+
+const details = (req, res) => {
+    Article.findById(req.params.id)
+    .then((result) => {
+        res.render('details', { article: result, title: 'Article Details'})
+    })
+    .catch((err) => {
+        console.log(err);  
+    });
+};
+
+const delete_post = (req, res) => {
+    const id = req.params.id;
+    Article.findByIdAndDelete(id)
+    .then(result => {
+        res.json({ redirect: '/articles'})
+    })
+    .catch((err) => {
+        console.log(err);  
+    });
+};
+
+
+const update = (req, res) => {
+    Article.findByIdAndUpdate(req.params.id, (err, doc) => {
+        if(!err)
+        res.render('articles/create', {
+            title: "Update", 
+            content: doc
+        })
+    });
+    
+}
+
+
+module.exports = {
+    index,
+    details,
+    create_get,
+    create_post,
+    delete_post,
+    update,
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function show(req, res) {
 //     res.render('articles', {
