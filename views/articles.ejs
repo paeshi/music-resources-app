@@ -1,29 +1,18 @@
 
     <%- include('partials/header');-%>
-    <!-- <h1>Articles</h1>
+    <div class="row articles-div">
+        <div class="col-lg-12 create-div">
 
-    <form action="/articles" method="post" id="articles">
-        <div class="form-group">
-            <label class="form-label">Title</label>
-            <input type="text" name="title" placeholder="" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="">Article</label>
-            <textarea class="form-control" type="text" name="bodyContent" cols="140" rows="15" placeholder=""></textarea>
-        </div>
-        <button type="submit" name="button" class="btn btn-primary mt-3">Publish</button>
-    </form> -->
-
-    <%if (articles.length > 0) { %>
+        <%if (articles.length > 0) { %>
         <% articles.forEach(function(article) { %>
-         
-            <a class="single-article" href="/articles/<%=article._id %>">
+         <a class="single-article" href="/articles/<%=article._id %>">
                 <h3 class='title'><%=article.title%></h3>
-                 <p class='snippet'><%=article.body%></p>
             </a>
-            
-         <%}) %>
-       <% } %>
- 
+                 <p class='snippet'><%=article.body%></p>
+                
+            <%}) %>
+        <% } %>
+        </div>
+    </div>
 
     <%- include('partials/footer');-%>
