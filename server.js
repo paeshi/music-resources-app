@@ -6,7 +6,7 @@ const port = process.env.PORT || 3050;
 require('./config/database');
 const app = express();
 const Article = require('./models/article');
-// const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');
 const articlesRouter = require('./routes/articles');
 const toolsRouter = require('./routes/tools');
 const coursesRouter = require('./routes/courses');
@@ -37,16 +37,7 @@ app.use(methodOverride('_method'));
 // };
 // app.use('/', indexRouter);
 
-app.put('/articles/:id', function (req, res) {
-    console.log('hello')
-        Article.findByIdAndUpdate(req.params.id, (err, doc) => {
-            console.log('hihi')
-            console.log(doc);
-            if(!err)
-            res.redirect('/articles')
-    
-            })
-        });
+
 
 
 
@@ -57,25 +48,39 @@ app.use('/', downloadsRouter);
 app.use('/', aboutRouter);
 app.use('/', postsRouter);
 app.use('/', blogsRouter)
+app.use('/', indexRouter)
 
-app.get('/', function(req, res) {
-    const articles = [
-        {title: 'Harmony', snippet: 'This is harmony...'},
-        {title: 'Melody', snippet: 'This is melody...'},
-        {title: 'Theory', snippet: 'This is theory...'},
-    ];
-    res.render('index', {title: 'Home', articles});
-})
-app.get('/articles/:id/edit', function (req, res) {
+// app.get('/', function(req, res) {
+//     const articles = [
+//         {title: 'Harmony', snippet: 'This is harmony...'},
+//         {title: 'Melody', snippet: 'This is melody...'},
+//         {title: 'Theory', snippet: 'This is theory...'},
+//     ];
+//     res.render('index', {title: 'Home', articles});
+// })
+
+
+// app.get('/articles/:id/edit', function (req, res) {
     
-    Article.findById(req.params.id)
-    .then((result) => {
-        res.render('edit', { articles: result, title: 'Edit Details'})
-    })
-    .catch((err) => {
-        console.log(err);  
-    });
-})
+//     Article.findById(req.params.id)
+//     .then((result) => {
+//         res.render('edit', { articles: result, title: 'Edit Details'})
+//     })
+//     .catch((err) => {
+//         console.log(err);  
+//     });
+// })
+
+// app.put('/articles/:id', function (req, res) {
+//     console.log('hello')
+//         Article.findByIdAndUpdate(req.params.id, (err, doc) => {
+//             console.log('hihi')
+//             console.log(doc);
+//             if(!err)
+//             res.redirect('/articles')
+    
+//             })
+//         });
 
 
 

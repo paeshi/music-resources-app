@@ -4,14 +4,48 @@
     <section id="welcome">
         <div class="row">
             <div class="col-lg-6 welcome-div">
-                <h1>Your Resources For Learning Music</h1>
+                
+                <img src="images/science.jpg" alt="">
+                <h5>The Psychology of Music</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quos tempore reiciendis, consectetur odio ut quisquam id earum fuga inventore magnam, facilis explicabo autem corrupti.</p>
+                
             </div>
+            <div class="col-lg-3 welcome-div">
+               
+                <img class="img-medium" src="images/kid1.jpg" alt="">
+                <h5>Cognitive Development With Early Music Education </h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                
+            </div>
+            <div class="col-lg-3 welcome-div">
+                
+                <img class="img-medium" src="images/studio.jpg" alt="">
+                <h5>Next Level Home Studios </h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                
+            </div>
+            <div class="col-lg-3 welcome-div">
+                
+                <img class="img-medium" src="images/world.jpg" alt="">
+                <h5>Music Around the World</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                
+            </div>
+            <div class="col-lg-3 welcome-div">
+                
+                <img class="img-medium"src="images/songwriting.jpg" alt="">
+                <h5>Masterful Songwriting</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                
+            </div>
+
+
             <div class="col-lg-6 welcome-div">
+                <h2>Top Courses</h2>
                <%if (articles.length > 0) { %>
                <% articles.forEach(function(article) { %>
                 <h3 class='title'><%=article.title%></h3>
-                <p class='snippet'><%=article.snippet%></p>
+                <p class='snippet' ><%=article.snippet%> <a href="">more...</a></p>
                 <%}) %>
               <% } %>
             </div>
@@ -41,6 +75,27 @@
     </div>
     
     </section>
+    <section id="features" class="box2">
+        <div class="row">
+            <div class="col-lg-4 feature-box">
+                <i class="icon fas fa-book-open fa-4x"></i> 
+                <h3>Professionally Developed Courses</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde necessitatibus animi tempore modi beatae iure.</p>
+            </div>
+            <div class="col-lg-4 feature-box">
+                <i class="icon fas fa-check-circle fa-4x"></i>
+                <h3>Proven Curriculums</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde necessitatibus animi tempore modi beatae iure.</p>
+            </div>
+            <div class="col-lg-4 feature-box">
+                <i class="icon fas fa-users fa-4x"></i>
+                <h3>Community Driven Help & Support</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde necessitatibus animi tempore modi beatae iure.</p>
+            </div>
+         
+        </div>
+        
+        </section>
 
  
 

@@ -11,35 +11,26 @@ body {
     font-family: 'Montserrat';
     background-image: url(/images/body1.jpg);
     background-size: auto;
-    
-    
- 
 }
+
 .logo {
     width: 3em;
     margin-right: .7em;
-
+    margin-left: 0;
+    padding: 0;
 }
 .logo-text {
     font-size: 2rem;
-   
     font-weight: 700;
 }
 
 .dropdown-menu {
     background-color: #418e8d;
     font-size: .7rem;
-   
-
-
   }
-  .dropdown-item {
+.dropdown-item {
       color: white;
   }
-
-
-
-
 #title {
   
     
@@ -47,7 +38,7 @@ body {
 
 .nav-link {
     text-transform: uppercase;
-    font-size: .7rem;
+    font-size: .8rem;
     color: white;
     text-decoration: none;
     
@@ -71,14 +62,29 @@ h1 {
     font-size: 1rem;
 }
 
+h5 {
+    font-size: 1.2rem;
+    
+}
+p {
+    font-size: .9rem;
+}
+
+
+
+
+
+
+
+
 /*****************************
  welcome section 
  ****************************/
 
 #welcome {
 
-    padding: 7% 10%;
-    text-align: center;
+    padding: 5% 7%;
+    
     /* background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(199,134,76,1) 0%, rgba(0,228,255,1) 100%); */
 border-radius: 30px;
@@ -86,10 +92,35 @@ border-radius: 30px;
 
 
     background: rgb(204,235,231);
-background: linear-gradient(90deg, rgba(204,235,231,1) 0%, rgba(228,228,226,1) 100%);
+background: linear-gradient(90deg, rgba(204,235,231,.8) 0%, rgba(242, 203, 88, 0.8) 100%);
    
-    
 
+}
+.welcome-div {
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    margin-bottom: .9em;
+    
+}
+.img-medium {
+    width: 100%;
+    margin-bottom: .9em;
+    height: 50%;
+}
+@media (max-width: 650px) {
+    img {
+        width: 100%;
+        margin-bottom: .9em;
+        
+    }
+    .img-medium {
+        width: 100%;
+        margin-bottom: .9em;
+        height: 70%;
+    }
 }
 
 
@@ -130,12 +161,14 @@ h3 {
 
 .footer {
     width: 100%;
+    padding: 1em;
     color: white;
     text-align: center;
   
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     font-size: .8rem;
+    background-color: rgba(20, 20, 38, .4)
 }
 
 
