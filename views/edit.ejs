@@ -1,8 +1,8 @@
-<!-- <%- include('partials/header');-%>
+ <%- include('partials/header');-%>
 
  <h1>Edit</h1>
 
-    <form action="/articles/<%= article._id%>?_method=PUT" method="post" id="articles">
+    <form action="/articles/<%=articles.id%>?_method=PUT" method="POST" id="articles">
         <div class="form-group">
             <label class="form-label">Title</label>
             <input type="text" name="title" placeholder="" class="form-control">
@@ -11,9 +11,9 @@
             <label for="">Article</label>
             <textarea class="form-control" type="text" name="body" cols="140" rows="15" placeholder=""></textarea>
         </div>
-        <button type="submit" name="button" class="btn btn-primary mt-3">Publish</button>
+        <!-- <button type="submit" name="button" class="btn btn-primary mt-3">Publish</button> -->
         <button type="submit" name="update" class="btn btn-primary mt-3">Update</button>
     </form>
 
 
-<%- include('partials/footer');-%> -->
+<%- include('partials/footer');-%> 

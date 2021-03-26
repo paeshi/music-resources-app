@@ -1,6 +1,7 @@
-
 const mongoose = require('mongoose');
+// const { update } = require('../controllers/articles');
 const Schema = mongoose.Schema;
+
 
 const articleSchema = new Schema({
     
@@ -22,25 +23,7 @@ const articleSchema = new Schema({
             return new Date().getFullYear();
           }
     },
-    
+
 }, { timestamps: true});
 
-const Article = mongoose.model('Article', articleSchema)
-
-module.exports = Article;
-
-// 
-
-
- 
-
-
-
-
-// module.exports = {
-//     // index,
-//     show,
-//     create,
-//     go,
-//     // new: newArticle,
-// };
+module.exports = mongoose.model('Article', articleSchema);
