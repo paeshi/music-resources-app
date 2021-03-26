@@ -29,18 +29,3 @@ const Article = mongoose.model('Article', articleSchema)
 
 module.exports = Article;
 
-// 
-
-
- 
-
-
-
-
-// module.exports = {
-//     // index,
-//     show,
-//     create,
-//     go,
-//     // new: newArticle,
-// };

@@ -70,16 +70,6 @@ console.log('hello')
         };
 
 
-// const update = (req, res) => {
-//     Article.findByIdAndUpdate(req.params.id, (err, doc) => {
-//         if(!err)
-//         res.render('articles/create', {
-//             title: "Update", 
-//             content: doc
-//         })
-//     });
-    
-// }
 
 
 
@@ -91,10 +81,6 @@ module.exports = {
     delete_post,
     update,
     put,
-
-
-
-
 
 }
 

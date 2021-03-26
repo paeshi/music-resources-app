@@ -25,21 +25,6 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 
-        
-// const details = (req, res) => {
-//     Article.findById(req.params.id)
-//     .then((result) => {
-//         res.render('details', { article: result, title: 'Article Details'})
-//     })
-//     .catch((err) => {
-//         console.log(err);  
-//     });
-// };
-// app.use('/', indexRouter);
-
-
-
-
 
 app.use('/', articlesRouter);
 app.use('/', toolsRouter);
@@ -49,6 +34,17 @@ app.use('/', aboutRouter);
 app.use('/', postsRouter);
 app.use('/', blogsRouter)
 app.use('/', indexRouter)
+
+
+app.listen(port, function() {
+    console.log(`Express is listening on port: ${port}`);
+});
+
+
+
+
+
+
 
 // app.get('/', function(req, res) {
 //     const articles = [
@@ -92,6 +88,3 @@ app.use('/', indexRouter)
 //     console.log(req.body);
 // })
 
-app.listen(port, function() {
-    console.log(`Express is listening on port: ${port}`);
-});
