@@ -20,7 +20,7 @@ router.get('/articles/:id', articlesCtrl.details);
 router.delete('/articles/:id', articlesCtrl.delete_post);
 router.get('/articles/:id/edit', articlesCtrl.update);
 
-router.put('/articles/:id/edit', articlesCtrl.put)
+router.put('/articles/:id', articlesCtrl.put)
     
 // router.put('/articles/:id', articlesCtrl.update);
 

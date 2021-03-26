@@ -1,7 +1,5 @@
 const Article = require('../models/article');
 
-
-
 const index = function (req, res) {
     Article.find().sort({ createdAt: -1 })
     .then((result) => {
@@ -11,8 +9,6 @@ const index = function (req, res) {
     console.log(err);  
 });
 };
-
-
 
 const create_get = (req, res) => {
     res.render('create', {title: 'Create Article'});
@@ -40,8 +36,7 @@ const details = (req, res) => {
 };
 
 const delete_post = (req, res) => {
-    const id = req.params.id;
-    Article.findByIdAndDelete(id)
+    Article.findByIdAndDelete(req.params.id)
     .then(result => {
         res.json({ redirect: '/articles'})
     })
@@ -49,9 +44,13 @@ const delete_post = (req, res) => {
         console.log(err);  
     });
 };
-const update =(req, res) => {
+
+
+const update = async (req, res) => {
 Article.findById(req.params.id)
+
     .then((result) => {
+    
         res.render('edit', { articles: result, title: 'Edit Details'})
     })
     .catch((err) => {
@@ -59,19 +58,14 @@ Article.findById(req.params.id)
     });
 }
 const put = (req, res) => {
-console.log('hello')
-        Article.findByIdAndUpdate(req.params.id, (err, doc) => {
-            console.log('hihi')
-            console.log(doc);
-            if(!err)
-            res.redirect('/articles')
-    
-            })
-        };
-
-
-
-
+    console.log('hello')
+            Article.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, doc) => {
+                
+                if(!err)
+                res.redirect('/articles')
+        
+                })
+            };
 
 module.exports = {
     index,
